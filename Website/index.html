@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="icon"
+      type="image/jpg"
+      href="favicon.jpg">
 <body>
 
 <!-- Navbar (sit on top) -->
@@ -15,6 +18,7 @@
       <a href="#project" class="w3-bar-item w3-button w3-hover-orange">The Project</a>
       <a href="#data" class="w3-bar-item w3-button w3-hover-orange">The Data</a>
       <a href="#discussion" class="w3-bar-item w3-button w3-hover-orange">Discussion</a>
+      <a href="#prediction" class="w3-bar-item w3-button w3-hover-orange">Prediction</a>
       <a href="#team" class="w3-bar-item w3-button w3-hover-orange">The Team</a>
     </div>
   </div>
@@ -41,6 +45,9 @@
         the pandemic and the cases and death rate it experienced. This means that while countries with higher
         GDP per Capita may seem to have better healthcare and emergency responses, government response as well as
         other factors played a much more significant role.
+        <br/>
+        <br/>
+        By the way, our team name originates from <i>The Legend of Korra</i>!
     </p>
   </div>
 
@@ -86,16 +93,33 @@
 <!-- Discussion Section -->
   <div class="w3-container w3-padding-32" id="discussion">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Discussion</h3>
+    <p class = "w3-center"><img src = "images/tableauscreenshot.png" title = "Inflation graph" height = "850" style = "border: 0px solid black"></img></p>
+    <p class = "w3-center">Comparing any aspect of economic health with either the mortality rate or amount of cases of coronavirus will result in a similar-looking graph. Applying a linear regression to the data, which we did in order to find correlation between the economic health of a nation and the impact of coronavirus, shows that there is very little correlation, if at all, between economic health and coronavirus impact. Additionally, there are outliers on all of these plots, which further goes to show that despite having a normal GDP, a nation could have a significantly low or high impact from coronavirus.</p>
+  </div>
 
+  <div class="w3-container w3-padding-32" id="prediction">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Prediction</h3>
   </div>
 
 
-  <!-- Team Section -->
+<div class="w3-row-padding">
+  <div class="w3-margin-bottom w3-center">
+      <img src = "graphs/image_11.svg" title = "Inflation graph" height = "450" style = "border: 0px solid black"></img>
+      <p class = "w3-center">We trained a regression model using the inflation of average consumer prices and end of period consumer prices, general government net lending,
+          and current account balance of each county in 2019. Using this model we correlated aspects of countries with trends in COVID-19 to predict
+          the COVID-19 mortality rates in 2021 of different countries around the world.
+          We found that the greatest influence on the mortality rate was the inflation of average consumer prices.</p>
+  </div>
+</div>
+
+
+
   <div class="w3-container w3-padding-32" id="team">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">The Team</h3>
 
   </div>
 
+  <!-- Team Section -->
   <div class="w3-row-padding">
     <div class="w3-col l3 m6 w3-margin-bottom">
       <img src="images/aditi.jpg" alt="Aditi" style="width:100%">
