@@ -9,8 +9,8 @@ Specifically, to submit your project you will be required to complete the follow
 
 ---
 
-**PASTE PUBLIC VIDEO LINK HERE: ___________________________**
-
+**PASTE PUBLIC VIDEO LINK HERE: https://youtu.be/gEaU_z8JIRo**
+**WEBSITE LINK: https://branmkam.github.io/The-Fire-Ferrets/#project
 Link to slides: https://docs.google.com/presentation/d/1ekxQFgZulim6Sf_ZpcWiMmfHcXaCaQvgOrvp3yZDIm0/
 
 ---
