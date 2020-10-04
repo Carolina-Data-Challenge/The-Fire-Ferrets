@@ -11,6 +11,8 @@ Specifically, to submit your project you will be required to complete the follow
 
 **PASTE PUBLIC VIDEO LINK HERE: ___________________________**
 
+Link to slides: https://docs.google.com/presentation/d/1ekxQFgZulim6Sf_ZpcWiMmfHcXaCaQvgOrvp3yZDIm0/edit#slide=id.g53a5cf0d97_7_0
+
 ---
 
 If you have any questions during the, either technical or logistical, be sure to reach out to a mentor and/or a director for assistance!
