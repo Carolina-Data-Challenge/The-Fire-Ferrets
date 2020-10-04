@@ -1,8 +1,8 @@
 import pandas as pd
+import numpy as np
 
 covid = pd.read_csv('coviddeaths.csv')
 weo2 = pd.read_csv('7-col_WEO.csv', encoding='cp1252')
-weo2.sort_values("ISO")
 
 #COVID
 covid_daily = covid[["cases", "deaths", "countriesAndTerritories"]]
@@ -55,12 +55,49 @@ for code in rec_20["ISO"]:
     if((code in t.values) == False):
         rec_20 = rec_20[rec_20.ISO != code]
 
-covid_totals.to_csv("covid_totals_new.csv")
+# covid_totals.to_csv("covid_totals_new.csv")
 rec_19.to_csv("result_2019.csv")
 rec_20.to_csv("result_2020.csv")
 
-#combination of both
-result_19 = pd.concat([covid_totals, rec_19], axis=1, join='outer')
-result_20 = pd.concat([covid_totals, rec_20], axis=1, join='outer')
+#----------------TFR DATASET---------------------#
 
-print(rec_19.head(8))
+#Reorganization of columns in the TFR dataset
+
+csv = pd.read_csv("rawTFRdata.csv", encoding = 'cp1252')
+
+df_final = csv[["Country Code", "Country Name"]]
+df_final = df_final.groupby(["Country Name"], as_index= False).agg("min")
+df_final.reset_index()
+for num in range(1960, 2017):
+    df = csv.loc[csv["Year"] == num]
+    df.reset_index()
+
+    #default zeros to make column
+    df_final[str(num)] = pd.Series(np.zeros(len(df_final["Country Code"])))
+
+
+    # get rid of territories that are not present in the official dataset by comparing country codes
+    t = df["Country Code"]
+    #checks each country code overall, if no year present, set to NaN, otherwise enter value
+    i = 0
+    success = 0
+    for code in df_final["Country Code"]:
+        if ((code in t.values)):
+            df_final[str(num)].at[df_final[str(num)].index[i]] = float(df["Value"].values[success])
+            success += 1
+        else:
+            df_final[str(num)].at[df_final[str(num)].index[i]] = "NaN"
+        i += 1
+
+print(df_final.head(10))
+tfr_full = df_final
+tfr_full.to_csv("TFRfull_2.csv")
+
+res_19 = pd.read_csv("alldata_2019.csv")
+
+s = res_19["ISO"]
+for code in tfr_full["Country Code"]:
+    if((code in s.values) == False):
+        tfr_full = tfr_full[tfr_full["Country Code"] != code]
+
+tfr_full.to_csv("TFRabridged.csv")
